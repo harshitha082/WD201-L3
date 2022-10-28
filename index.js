@@ -14,7 +14,7 @@ const todoList = () => {
       var od_lst = [];
       for (x in all) {
         if (all[x].dueDate < today) {
-          od_lst.push(all[i]);
+          od_lst.push(all[x]);
         }
       }
       return od_lst;
@@ -27,7 +27,7 @@ const todoList = () => {
       var dt_lst = [];
       for (x in all) {
         if (all[x].dueDate === today) {
-          dt_lst.push(all[i]);
+          dt_lst.push(all[x]);
         }
       }
       return dt_lst;
@@ -40,7 +40,7 @@ const todoList = () => {
       var dl_lst = [];
       for (x in all) {
         if (all[x].dueDate > today) {
-          dl_lst.push(all[i]);
+          dl_lst.push(all[x]);
         }
       }
       return dl_lst;
@@ -51,9 +51,8 @@ const todoList = () => {
       // FILL YOUR CODE HERE
       var p;
       var displayList = []
-      for (p=0;p<list.length;i++) {
+      for (p=0;p<list.length;p++) {
         if (list[p].completed === false) {
-          //`[ ] ${i.title} ${i.dueDate}`
           if (list[p].dueDate===today) {
             displayList.push(`[ ] ${list[p].title}`)
           }
@@ -62,7 +61,6 @@ const todoList = () => {
           }
         }
         else {
-          // `[x] ${i.title} ${i.dueDate}`
           if (list[p].dueDate===today) {
             displayList.push(`[x] ${list[p].title}`)
           }
